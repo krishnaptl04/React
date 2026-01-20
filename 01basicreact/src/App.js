@@ -1,9 +1,11 @@
-
+import Tea from "./K";
 
 function App() {
   return (
-    <h1>REACT</h1>
-  );
+    <>
+      <Tea />
+
+    </>);
 }
 
 export default App;
