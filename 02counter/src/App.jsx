@@ -4,22 +4,39 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  let counter = 15;
+  let [counter, setCounter] = useState(15);
+
+  //usestate is used to create a state variable
+  // use state return an  array with two values
+  // first value is the current state value
+  //second value is a function that allows us to update the state value
+
+  // let counter = 15;
 
   const addValue = () => {
-    // console.log("value added", Math.random());
-    console.log("clicked", counter);
-    counter = counter + 1;
+    if (counter < 20) {
+      // console.log("value added", Math.random());
+      // console.log("clicked", counter);
+      // counter = counter + 1;
+      setCounter(counter + 1);
+    }
+  };
+
+  const removeValue = () => {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
   };
   return (
     <>
       <h1>Vite + React</h1>
       <h2>Counter Value : {counter}</h2>
 
-      <button onClick={addValue}>Add Value</button>
+      <button onClick={addValue}>Add Value :{counter}</button>
       <br />
-      <br />
-      <button>Remove Value</button>
+
+      <button onClick={removeValue}>Remove Value : {counter}</button>
+      <p>Footer:{counter}</p>
     </>
   );
 }
